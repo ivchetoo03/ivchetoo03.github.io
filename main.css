@@ -1,7 +1,7 @@
 .title{
   position: absolute;
   color: rgb(255, 255, 255);
-  font-size: 30px;
+  font-size: 2vw;
   left: 0;
   margin: 5px;
   width: 50%;
@@ -19,16 +19,16 @@
 }
 
 .block {
-  padding: 15px;
   background-color: rgba(38, 38, 38, 0);
-  margin: 10px;
+  padding: 2vh;
+  margin: 1vh;
   text-align: center;
   font-family: "Press Start 2P";
   font-size: 20px;
   color: rgb(255, 255, 255);
   text-decoration: none;
   border: 1px dashed  rgb(255, 0, 0);
-  text-wrap: nowrap;
+  text-wrap: nowrap;  
 }
 
 .one {
@@ -42,7 +42,7 @@
   font-family: "Press Start 2P";
   display: flex;
   justify-content: right;
-  align-items: end;  
+  align-items: end; 
 }
 
 .middle{
@@ -64,7 +64,7 @@
   width: 20%;
   bottom: 0;
   background-color: rgb(255, 255, 255);
-  font-size: 15px;
+  font-size: 20px;
   font-family: Calibri;
   text-align: left;
   line-height: 25px;
@@ -176,14 +176,17 @@
   padding: 0;
 }
 
-@media (max-width: 1000px) {
+h1{
+  line-height: 30px;
+}
+
+@media (max-width: 1400px) {
   .title {
     width: 100%;
     text-align: center;
-    font-size: 30px;
-    bottom: 20px;
-    height: 45px;
-    text-wrap: nowrap;
+    font-size: 3vw;
+    bottom: 2vw;
+    height: 5vh;
   }
 
   .one {
@@ -198,5 +201,24 @@
     font-size: 20px;
     color: rgb(255, 255, 255);
     text-decoration: none;
+  }
+}
+
+@media (max-height: 440px){
+  .title{
+    font-size: 5.2vh;
+    text-wrap: nowrap;  
+  }
+
+  .block{
+    font-size: 4.5vh;
+    height: 4.5vh;
+  }
+}
+
+@media (max-width: 1400px) and (max-height: 800px){
+  .title{
+    font-size: 3.5vh;
+    text-wrap: nowrap;  
   }
 }
