@@ -206,6 +206,20 @@
   align-items: center;
 }
 
+.planet_title{
+  position: relative;
+  margin: 15px;
+}
+
+.planet_descr{
+  position: relative;
+  font-size: 25px;
+}
+
+.list{
+  line-height: 30px;
+}
+
 h1{
   line-height: 30px;
 }
