@@ -31,19 +31,6 @@
   text-wrap: nowrap;  
 }
 
-.block_ {
-  background-color: rgba(38, 38, 38, 0);
-  border: 1px dashed  rgb(0, 255, 0);
-  color: rgb(255, 255, 255);
-  font-family: "Press Start 2P";
-  font-size: 20px;
-  padding: 1vh;
-  margin: 1vh;
-  text-align: center;
-  text-decoration: none;
-  text-wrap: nowrap;  
-}
-
 .one {
   position: absolute;
   width: 100%;
