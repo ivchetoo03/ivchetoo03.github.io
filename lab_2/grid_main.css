@@ -1,24 +1,28 @@
-.title{
-  position: absolute;
-  color: rgb(255, 255, 255);
-  font-size: 2vw;
-  left: 0;
-  margin: 5px;
-  width: 50%;
-  height: 75%;
-}
-
-
-.title_bottom{
-  position: absolute;
-  color: rgb(255, 255, 255);
-  right: 0;
-  bottom: 0;
-  font-size: 20px;
+body{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
   margin: 0;
 }
 
-.block {
+.main_title{
+  color: rgb(255, 255, 255);
+  font-size: 2vw;
+}
+
+.title_bottom{
+  grid-column: 4;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  margin: 0;
+  justify-self:end;
+}
+
+.titlee{
+  text-align: center;
+}
+
+.button_top {
   background-color: rgba(38, 38, 38, 0);
   padding: 2vh;
   margin: 1vh;
@@ -31,7 +35,7 @@
   text-wrap: nowrap;  
 }
 
-.block_ {
+.button_bottom {
   background-color: rgba(38, 38, 38, 0);
   border: 1px dashed  rgb(0, 255, 0);
   color: rgb(255, 255, 255);
@@ -44,38 +48,26 @@
   text-wrap: nowrap;  
 }
 
+.knopochky{
+  grid-column: 1;
+  grid-row:1;
+}
+
 .one {
-  position: absolute;
-  width: 100%;
-  height: 10%;
-  top: 0;
-  left: 0;
+  grid-column: 1 / span 3;
+  grid-row: 1;
   background-image: url(pic/space_background.jpg);
   background-size: 30%;
   font-family: "Press Start 2P";
   display: flex;
   justify-content: right;
-  align-items: end; 
-}
-
-.middle{
-  position: absolute;
-  top: 10%;
-  bottom: 10%;
-  width: 100%;
-  left: 0;
-  background-color: lightgreen;
-  text-align: center;
-  line-height: 15px;
-  color: white;
+  align-items: end;
+  height: 10vh;
 }
 
 .two{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20%;
-  bottom: 0;
+  grid-column: 1;
+  grid-row: 2 / span 3;
   background-color: rgb(255, 255, 255);
   font-size: 20px;
   font-family: Calibri;
@@ -83,58 +75,44 @@
   line-height: 25px;
   color: rgb(0, 0, 0);
   overflow: auto;
-}
-
-.middle2{
-  position: absolute;
-  top: 0;
-  bottom: 100px;
-  height: 100%;
-  width: 80%;
-  right: 0;
-  background-color: rgb(144, 229, 238);
-  text-align: center;
-  color: white;
+  height: 80vh;
+  width: 20vw;
 }
 
 .three{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height:10%;
+  display: grid;
+  grid-template-columns: 60vw 20vw;
+  grid-template-rows: auto;
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  justify-items: center;
   background-image: url(pic/chill-background.jpg);
   background-size: 30%;
   font-family: Calibri;
-  text-align: center;
-  line-height: 6vh;
   color: white;
+  height: 5vh;
+  width: 80vw;
 }
 
-.middle3{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 80%;
-  height: 90%;
-  background-color: rgb(18, 109, 82);
+.four{
+  grid-column: 2;
+  grid-row: 4;
+  background-color: rgb(44, 44, 44);
   text-align: center;
+  font-family: Calibri;
+  font-size: 30px;
+  line-height: 50px;
   color: white;
+  height: 8vh;
+  width: 60vw;
 }
-
-.titlee{
-  position: relative;
-  top: 0;
-  text-align: center;
-  line-height: 40px;
+.four p{
+  margin: 0;
 }
 
 .five{
-  position: absolute;
-  right: 0;
-  width: 25%;
-  height:100%;
+  grid-column: 3;
+  grid-row: 3 / span 2;
   background-color: rgb(79, 45, 0);
   font-family: Calibri;
   font-size: 25px;
@@ -142,39 +120,13 @@
   line-height: 24px;
   color: white;
   overflow: auto;
-}
-
-.middle4{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 75%;
-  height: 100%;
-  background-color: rgb(18, 83, 109);
-  text-align: center;
-  color: white;
-}
-
-.four{
-  position: absolute;
-  right: 0;
-  bottom:0;
-  width: 100%;
-  height:15%;
-  background-color: rgb(44, 44, 44);
-  text-align: center;
-  font-family: Calibri;
-  font-size: 30px;
-  line-height: 50px;
-  color: white;
+  height: 75vh;
+  width: 20vw;
 }
 
 .six{
-  position: absolute;
-  right: 0;
-  top:0;
-  width: 100%;
-  height:85%;
+  grid-column: 2;
+  grid-row: 3;
   background-color: rgb(238, 238, 238);
   text-align: left;
   font-family: Calibri;
@@ -182,63 +134,44 @@
   line-height: 25px;
   color: rgb(0, 0, 0);
   overflow: auto;
+  height: 67vh;
+  width: 60vw;
 }
 
 .seven {
-  position: absolute;
-  width: 100%;
-  height: 10%;
-  bottom: 0;
-  left: 0;
+  grid-column: 1 / span 3;
+  grid-row: 5;
   background-image: url(pic/space_background.jpg);
   background-size: 30%;
   font-family: "Press Start 2P";
-  display:flex;
-  justify-content: left;
-  align-items: center;
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 10vh;
+  align-items:center;
+  height: 10vh;
+
 }
 
 .subtitle{
-  position: absolute;
-  padding: 1vh;
+  grid-column: 1;
   font-size: 4vh;
   margin: 0;
-  width: 73%;
+  width: 100%;
+  height: 5vh;
+  text-align: center;
   background-color: hsla(0, 0%, 0%, 0.8);
 }
 
 .cantina{
-  position:absolute;
-  text-align: left;
-  right: 50px;
-}
-
-.luke{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.planet_title{
-  position: relative;
-  margin: 15px;
-}
-
-.planet_descr{
-  position: relative;
-  font-size: 25px;
-}
-
-.list{
-  line-height: 30px;
+  height: 10%;
 }
 
 h1{
   line-height: 30px;
 }
 
-@media (max-width: 1400px) {
-  .title {
+/* @media (max-width: 1400px) {
+  .main_title {
     width: 95%;
     text-align: center;
     font-size: 3vw;
@@ -250,7 +183,7 @@ h1{
     justify-content: center; 
   }
 
-  .block {
+  .button_top {
     padding: 5px;
     width: 100%;
     margin: 0;
@@ -262,20 +195,20 @@ h1{
 }
 
 @media (max-height: 440px){
-  .title{
+  .main_title{
     font-size: 5.2vh;
     text-wrap: nowrap;  
   }
 
-  .block{
+  .button_top{
     font-size: 4.5vh;
     height: 4.5vh;
   }
 }
 
 @media (max-width: 700px){
-  .block{
+  .button_top{
     font-size: 3vw;
     height: 3vw;
   }
-}
+} */
