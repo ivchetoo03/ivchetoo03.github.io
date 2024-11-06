@@ -1,0 +1,167 @@
+body{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
+  margin: 0;
+}
+
+.main_title{
+  color: rgb(255, 255, 255);
+  font-size: 2vw;
+  text-align:left;
+}
+
+.title_bottom{
+  grid-column: 4;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  margin: 0;
+  justify-self:end;
+}
+
+.titlee{
+  text-align: center;
+}
+
+.button_top {
+  background-color: rgba(38, 38, 38, 0);
+  padding: 2vh;
+  margin: 1vh;
+  text-align: center;
+  font-family: "Press Start 2P";
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border: 1px dashed  rgb(255, 0, 0);
+  text-wrap: nowrap;  
+}
+
+/* .button_bottom {
+  background-color: rgba(38, 38, 38, 0);
+  border: 1px dashed  rgb(0, 255, 0);
+  color: rgb(255, 255, 255);
+  font-family: "Press Start 2P";
+  font-size: 20px;
+  padding: 1vh;
+  margin: 1vh;
+  text-align: center;
+  text-decoration: none;
+  text-wrap: nowrap;  
+} */
+
+.one {
+  grid-column: 1 / span 3;
+  grid-row: 1;
+  background-image: url(pic/space_background.jpg);
+  background-size: 30%;
+  font-family: "Press Start 2P";
+  display: flex;
+  justify-content: right;
+  align-items: end;
+  height: 10vh;
+}
+
+.two{
+  grid-column: 1;
+  grid-row: 2 / span 3;
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-family: Calibri;
+  text-align: left;
+  line-height: 25px;
+  color: rgb(0, 0, 0);
+  overflow: auto;
+  height: 80vh;
+  width: 20vw;
+}
+
+.three{
+  display: grid;
+  grid-template-columns: 60vw 20vw;
+  grid-template-rows: auto;
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  justify-items: center;
+  background-image: url(pic/chill-background.jpg);
+  background-size: 30%;
+  font-family: Calibri;
+  color: rgb(255, 255, 255);
+  height: 5vh;
+  width: 80vw;
+}
+
+.four{
+  grid-column: 2;
+  grid-row: 4;
+  background-color: rgb(44, 44, 44);
+  text-align: center;
+  font-family: Calibri;
+  font-size: 30px;
+  line-height: 50px;
+  color: white;
+  height: 8vh;
+  width: 60vw;
+}
+.four p{
+  margin: 0;
+}
+
+.five{
+  grid-column: 3;
+  grid-row: 3 / span 2;
+  background-color: rgb(79, 45, 0);
+  font-family: Calibri;
+  font-size: 25px;
+  text-align: left; 
+  line-height: 24px;
+  color: white;
+  overflow: auto;
+  height: 75vh;
+  width: 20vw;
+}
+
+.six{
+  grid-column: 2;
+  grid-row: 3;
+  background-color: rgb(238, 238, 238);
+  text-align: left;
+  font-family: Calibri;
+  font-size: 30px;
+  line-height: 25px;
+  color: rgb(0, 0, 0);
+  overflow: auto;
+  height: 67vh;
+  width: 60vw;
+}
+
+.seven {
+  grid-column: 1 / span 3;
+  grid-row: 5;
+  background-image: url(pic/space_background.jpg);
+  background-size: 30%;
+  font-family: "Press Start 2P";
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 10vh;
+  align-items:center;
+  height: 10vh;
+
+}
+
+.subtitle{
+  grid-column: 1;
+  font-size: 4vh;
+  margin: 0;
+  width: 100%;
+  height: 5vh;
+  text-align: center;
+  background-color: hsla(0, 0%, 0%, 0.8);
+}
+
+.cantina{
+  height: 10%;
+}
+
+h1{
+  line-height: 30px;
+}

@@ -1,0 +1,187 @@
+@media (max-width: 1024px) {
+  /* Встановлюємо шаблон сітки для мобільних */
+  body{
+    display:flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  
+  .main_title{
+    color: rgb(255, 255, 255);
+    font-size: 4vw;
+    text-align:center;
+    margin: 2%;
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+
+  .title_bottom{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin: 0;
+    justify-self:end;
+  }
+  
+  .titlee{
+    text-align: center;
+  }
+  
+  .button_top.main {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .button_top.planets{
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .button_top.map{
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .button_top.about{
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  .button_top {
+    background-color: rgba(38, 38, 38, 0);
+    text-align: center;
+    font-family: "Press Start 2P";
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border: 1px dashed  rgb(255, 0, 0);
+    text-wrap: nowrap;  
+  }
+  
+  .header {
+    display: grid;
+    position: sticky;
+    top: 0;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    background-image: url(pic/space_background.jpg);
+    background-size: 30%;
+    font-family: "Press Start 2P";
+    width: 100%;
+    order: 1;
+  }
+  
+  .news_content{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    font-size: 3vw;
+    font-family: Calibri;
+    text-align: left;
+    line-height: 20px;
+    height: auto;
+    width: 90%;
+  }
+
+  .news{
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(238, 238, 238);
+    order: 3;
+  }
+  
+  .acolyte_pic{
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .header_2{
+    justify-items: center;
+    background-image: url(pic/chill-background.jpg);
+    background-size: 30%;
+    font-family: Calibri;
+    color: rgb(255, 255, 255);
+    height: 50px;
+    width: 100%;
+    order: 2;
+  }
+  
+  .four{
+    grid-column: 2;
+    grid-row: 4;
+    background-color: rgb(44, 44, 44);
+    text-align: center;
+    font-family: Calibri;
+    font-size: 30px;
+    line-height: 50px;
+    color: white;
+    width: 100%;
+    order: 5;
+  }
+  .four p{
+    margin: 0;
+  }
+  
+  .fact{
+    background-color: rgb(79, 45, 0);
+    font-family: Calibri;
+    font-size: 25px;
+    text-align: left; 
+    line-height: 24px;
+    color: white;
+    width: 100%;
+    order: 5;
+  }
+  
+  .main_content{
+    background-color: rgb(238, 238, 238);
+    text-align: left;
+    font-family: Calibri;
+    font-size: 30px;
+    line-height: 25px;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    padding-bottom: 5%;
+    order: 4;
+  }
+
+  h4{
+    margin: 10px;
+  }
+  
+  .seven {
+    display:grid;
+    background-image: url(pic/space_background.jpg);
+    background-size: 30%;
+    font-family: "Press Start 2P";
+    grid-template-columns: auto auto;
+    grid-template-rows: 10vh;
+    align-items:center;
+    height: 10vh;
+    order: 7;
+  
+  }
+  
+  .subtitle{
+    font-size: 40px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: hsla(0, 0%, 0%, 0.8);
+  }
+  
+  .cantina{
+    height: 10%;
+  }
+  
+  h1{
+    line-height: 40px;
+  }
+}

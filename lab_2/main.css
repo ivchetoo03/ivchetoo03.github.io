@@ -53,7 +53,7 @@
   background-image: url(pic/space_background.jpg);
   background-size: 30%;
   font-family: "Press Start 2P";
-  display: flex;
+  display: flex; /*Потрібен для аранжування кнопок*/
   justify-content: right;
   align-items: end; 
 }
@@ -193,7 +193,7 @@
   background-image: url(pic/space_background.jpg);
   background-size: 30%;
   font-family: "Press Start 2P";
-  display:flex;
+  display:flex; /*Потрібен для аранжування кнопок*/
   justify-content: left;
   align-items: center;
 }
@@ -211,12 +211,6 @@
   position:absolute;
   text-align: left;
   right: 50px;
-}
-
-.luke{
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .planet_title{
