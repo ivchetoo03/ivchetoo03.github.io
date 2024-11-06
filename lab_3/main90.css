@@ -50,7 +50,7 @@
     background-color: rgba(38, 38, 38, 0);
     text-align: center;
     font-family: "Press Start 2P";
-    font-size: 20px;
+    font-size: 3vw;
     color: rgb(255, 255, 255);
     text-decoration: none;
     border: 1px dashed  rgb(255, 0, 0);
@@ -107,24 +107,22 @@
     background-size: 30%;
     font-family: Calibri;
     color: rgb(255, 255, 255);
-    height: 50px;
+    height: auto;
     width: 100%;
     order: 2;
   }
   
-  .four{
-    grid-column: 2;
-    grid-row: 4;
+  .ad{
     background-color: rgb(44, 44, 44);
     text-align: center;
     font-family: Calibri;
-    font-size: 30px;
-    line-height: 50px;
+    font-size: 5vw;
+    line-height: 10vw;
     color: white;
     width: 100%;
     order: 5;
   }
-  .four p{
+  .ad p{
     margin: 0;
   }
   
@@ -143,17 +141,14 @@
     background-color: rgb(238, 238, 238);
     text-align: left;
     font-family: Calibri;
-    font-size: 30px;
-    line-height: 25px;
+    font-size: 5vw;
+    line-height: 5vw;
     color: rgb(0, 0, 0);
     width: 100%;
     padding-bottom: 5%;
     order: 4;
   }
 
-  h4{
-    margin: 10px;
-  }
   
   .seven {
     display:grid;
@@ -165,16 +160,15 @@
     align-items:center;
     height: 10vh;
     order: 7;
-  
+    
   }
   
   .subtitle{
-    font-size: 40px;
+    font-size: 8vw;
     margin: 0;
     width: 100%;
-    height: 100%;
     text-align: center;
-    background-color: hsla(0, 0%, 0%, 0.8);
+    background-color: hsla(0, 0%, 0%, 0.7);
   }
   
   .cantina{
@@ -183,5 +177,9 @@
   
   h1{
     line-height: 40px;
+  }
+
+  h4{
+    margin: 1vw;
   }
 }
