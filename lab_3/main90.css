@@ -1,5 +1,5 @@
 @media (max-width: 1024px) {
-  /* Встановлюємо шаблон сітки для мобільних */
+
   body{
     display:flex;
     flex-direction: column;
@@ -21,10 +21,7 @@
     margin: 0;
     justify-self:end;
   }
-  
-  .titlee{
-    text-align: center;
-  }
+
   
   .button_top.main {
     grid-column: 1;
@@ -48,13 +45,15 @@
 
   .button_top {
     background-color: rgba(38, 38, 38, 0);
-    text-align: center;
+    color: rgb(255, 255, 255);
+    border: 1px dashed  rgb(255, 0, 0);
+    line-height: 8vw;
     font-family: "Press Start 2P";
     font-size: 3vw;
-    color: rgb(255, 255, 255);
+    height: 8vw; 
+    text-align: center;
     text-decoration: none;
-    border: 1px dashed  rgb(255, 0, 0);
-    text-wrap: nowrap;  
+    text-wrap: nowrap; 
   }
   
   .header {
@@ -126,17 +125,40 @@
     margin: 0;
   }
   
-  .fact{
+  .fact_content{
     background-color: rgb(79, 45, 0);
     font-family: Calibri;
     font-size: 25px;
     text-align: left; 
     line-height: 24px;
     color: white;
+    width: 80%;
+  }
+
+  .fact{
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    background-color: rgb(238, 238, 238);
     order: 5;
   }
+
+  .fact_content p{
+    padding:2vw;
+    margin: 0;
+  }
   
+  .titlee{
+    text-align: center;
+    font-size: 7vw;
+    margin: 0;
+    height: 10vw;
+    line-height: 10vw;
+  }
+
   .main_content{
     background-color: rgb(238, 238, 238);
     text-align: left;
@@ -149,8 +171,7 @@
     order: 4;
   }
 
-  
-  .seven {
+  .footer {
     display:grid;
     background-image: url(pic/space_background.jpg);
     background-size: 30%;
@@ -160,7 +181,6 @@
     align-items:center;
     height: 10vh;
     order: 7;
-    
   }
   
   .subtitle{

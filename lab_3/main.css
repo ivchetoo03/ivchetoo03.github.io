@@ -7,8 +7,12 @@ body{
 
 .main_title{
   color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
   font-size: 2vw;
-  text-align:left;
+  width: 100%;
+  margin: 0;
+  height: 100%;
 }
 
 .title_bottom{
@@ -36,20 +40,7 @@ body{
   text-wrap: nowrap;  
 }
 
-/* .button_bottom {
-  background-color: rgba(38, 38, 38, 0);
-  border: 1px dashed  rgb(0, 255, 0);
-  color: rgb(255, 255, 255);
-  font-family: "Press Start 2P";
-  font-size: 20px;
-  padding: 1vh;
-  margin: 1vh;
-  text-align: center;
-  text-decoration: none;
-  text-wrap: nowrap;  
-} */
-
-.one {
+.header {
   grid-column: 1 / span 3;
   grid-row: 1;
   background-image: url(pic/space_background.jpg);
@@ -61,7 +52,7 @@ body{
   height: 10vh;
 }
 
-.two{
+.news{
   grid-column: 1;
   grid-row: 2 / span 3;
   background-color: rgb(255, 255, 255);
@@ -75,7 +66,7 @@ body{
   width: 20vw;
 }
 
-.three{
+.header_2{
   display: grid;
   grid-template-columns: 60vw 20vw;
   grid-template-rows: auto;
@@ -85,12 +76,12 @@ body{
   background-image: url(pic/chill-background.jpg);
   background-size: 30%;
   font-family: Calibri;
-  color: rgb(255, 255, 255);
+  color: white;
   height: 5vh;
   width: 80vw;
 }
 
-.four{
+.ad{
   grid-column: 2;
   grid-row: 4;
   background-color: rgb(44, 44, 44);
@@ -102,11 +93,11 @@ body{
   height: 8vh;
   width: 60vw;
 }
-.four p{
+.ad p{
   margin: 0;
 }
 
-.five{
+.fact{
   grid-column: 3;
   grid-row: 3 / span 2;
   background-color: rgb(79, 45, 0);
@@ -120,7 +111,7 @@ body{
   width: 20vw;
 }
 
-.six{
+.main_content{
   grid-column: 2;
   grid-row: 3;
   background-color: rgb(238, 238, 238);
@@ -134,16 +125,17 @@ body{
   width: 60vw;
 }
 
-.seven {
+.footer {
   grid-column: 1 / span 3;
   grid-row: 5;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
   background-image: url(pic/space_background.jpg);
   background-size: 30%;
   font-family: "Press Start 2P";
-  display:grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: 10vh;
-  align-items:center;
   height: 10vh;
 
 }
@@ -164,4 +156,205 @@ body{
 
 h1{
   line-height: 30px;
+}
+
+@media (max-width: 1024px) {
+
+  body{
+    display:flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  
+  .main_title{
+    color: rgb(255, 255, 255);
+    font-size: 4vw;
+    text-align:center;
+    margin: 2%;
+    width: auto;
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+
+  .title_bottom{
+    font-size: 3vw;
+  }
+
+  
+  .button_top.main {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .button_top.planets{
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .button_top.map{
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .button_top.about{
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  .button_top {
+    line-height: 8vw;
+    font-size: 3vw;
+    height: 8vw;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    display: grid;
+    position: sticky;
+    top: 0;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    order: 1;
+  }
+  
+  .news_content{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    font-size: 3vw;
+    font-family: Calibri;
+    text-align: left;
+    line-height: 20px;
+    height: auto;
+    width: 90%;
+  }
+
+  .news{
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(238, 238, 238);
+    overflow: initial;
+    height: auto;
+    order: 3;
+  }
+  
+  .acolyte_pic{
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .header_2{
+    justify-items: center;
+    background-image: url(pic/chill-background.jpg);
+    background-size: 30%;
+    font-family: Calibri;
+    color: rgb(255, 255, 255);
+    height: auto;
+    width: 100%;
+    display: initial;
+    order: 2;
+  }
+  
+  .ad{
+    background-color: rgb(44, 44, 44);
+    text-align: center;
+    font-family: Calibri;
+    font-size: 5vw;
+    line-height: 10vw;
+    color: white;
+    width: 100%;
+    height: auto;
+    order: 5;
+  }
+  .ad p{
+    margin: 0;
+  }
+  
+  .fact_content{
+    background-color: rgb(79, 45, 0);
+    font-family: Calibri;
+    font-size: 25px;
+    text-align: left; 
+    line-height: 24px;
+    color: white;
+    width: 80%;
+  }
+
+  .fact{
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: rgb(238, 238, 238);
+    order: 5;
+  }
+
+  .fact_content p{
+    padding:2vw;
+    margin: 0;
+  }
+  
+  .titlee{
+    text-align: center;
+    font-size: 7vw;
+    margin: 0;
+    height: 10vw;
+    line-height: 10vw;
+  }
+
+  .main_content{
+    background-color: rgb(238, 238, 238);
+    text-align: left;
+    font-family: Calibri;
+    font-size: 5vw;
+    line-height: 5vw;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: auto;
+    padding-bottom: 5%;
+    order: 4;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    order: 7;
+  }
+  
+  .subtitle{
+    font-size: 8vw;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background-color: hsla(0, 0%, 0%, 0.7);
+  }
+  
+  .cantina{
+    height: 10%;
+  }
+  
+  h1{
+    line-height: 40px;
+  }
+
+  h4{
+    margin: 1vw;
+  }
 }
