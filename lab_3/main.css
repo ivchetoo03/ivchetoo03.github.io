@@ -29,14 +29,14 @@ body{
 
 .button_top {
   background-color: rgba(38, 38, 38, 0);
+  border: 1px dashed  rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
   padding: 2vh;
   margin: 1vh;
   text-align: center;
   font-family: "Press Start 2P";
   font-size: 20px;
-  color: rgb(255, 255, 255);
   text-decoration: none;
-  border: 1px dashed  rgb(255, 0, 0);
   text-wrap: nowrap;  
 }
 
@@ -154,8 +154,55 @@ body{
   height: 10%;
 }
 
+.main_content_planets{
+  grid-column: 2;
+  grid-row: 3;
+  background-color: rgb(238, 238, 238);
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-family: Calibri;
+  overflow: auto;
+  height: 67vh;
+  width: 60vw;
+  
+}
+
+.planet_title{
+  font-size: 3vw;
+  padding: 2vw;
+  margin: 0;
+  text-align: center;
+}
+
+.planet_descr{
+  background-color:rgb(255, 227, 227);
+  border-left: 3px solid black;
+  font-size: 1.5vw;
+  padding: 1vw;
+  padding-top: 0;
+  margin-top:1vw;
+  line-height: 2vw;
+}
+
+.planet_pic{
+  width: 50%;
+  align-self: center;
+  border: 4px inset  rgb(255, 0, 0);
+}
+
+.list{
+  line-height: 30px;
+}
+
 h1{
   line-height: 30px;
+}
+
+h4{
+  margin: 2vh;
+  margin-left:0;
 }
 
 @media (max-width: 1024px) {
@@ -316,16 +363,17 @@ h1{
   }
 
   .main_content{
-    background-color: rgb(238, 238, 238);
-    text-align: left;
-    font-family: Calibri;
     font-size: 5vw;
     line-height: 5vw;
-    color: rgb(0, 0, 0);
     width: 100%;
     height: auto;
     padding-bottom: 5%;
     order: 4;
+  }
+  .main_content ul{
+    font-size: 4vw;
+    line-height: 4vw;
+    padding-left: 10%;
   }
 
   .footer {
@@ -349,6 +397,44 @@ h1{
   .cantina{
     height: 10%;
   }
+
+  .main_content_planets{
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    flex-direction: column;
+    font-family: Calibri;
+    line-height: 5vw;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: auto;
+    padding-bottom: 5%;
+    order: 4;
+  }
+
+  .planet_title{
+    padding: 2vw;
+    margin: 0;
+    text-align: center;
+    font-size: 7vw;
+  }
+  
+  .planet_descr{
+    background-color:rgb(255, 227, 227);
+    border-left: 7px solid black;
+    font-size: 3vw;
+    line-height: 3vw;
+    padding: 2vw;
+    margin-top:1vw;
+  }
+
+  .planet_pic{
+    width: 60%;
+    align-self: center;
+  }
+  
+  .list{
+    line-height: 30px;
+  }
   
   h1{
     line-height: 40px;
@@ -357,4 +443,8 @@ h1{
   h4{
     margin: 1vw;
   }
+
+  
+
+  /* <img src="pic/star_wars_map.png" alt=" "class="map"> */
 }
