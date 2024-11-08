@@ -1,17 +1,17 @@
-/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
-  
-  /* General Body Styling */
+
   body {
-    font-family: Arial, sans-serif;
     color: #333;
+    display: grid;
+    grid-template: 4rem auto 6rem / auto;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    /* border: solid 10px #4674e9;  */
   }
   
-  /* Header */
   header {
     display: flex;
     justify-content: space-between;
@@ -19,25 +19,42 @@
     padding: 1rem 2rem;
     background-color: #f8f8f8;
   }
+
+  main{
+    background-color: rgb(237, 244, 253);
+  }
   
-  .logo {
-    font-size: 1.5rem;
-    color: #999;
+  footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  footer p{
+    width: 40%;
+  }
+
+  .logo img{
+    width: 80%;
   }
   
   .menu-icon {
     font-size: 1.5rem;
     cursor: pointer;
   }
-  
-  /* Main Intro Section */
+
   .intro {
     text-align: center;
-    padding: 2rem;
-    background-color: #e6f0ff;
+    padding: 0 3rem;
   }
   
   .intro h1 {
+    font-family: 'Cambay';
     font-size: 2.5rem;
     color: #4674e9;
   }
@@ -45,20 +62,27 @@
   .intro p {
     font-size: 1rem;
     color: #666;
-    margin-top: 1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1rem auto 0;
+    width: 60%;
+    line-height: 1.5rem;
   }
   
   /* Services Section */
   .services {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 1rem;
-    background-color: #e6f0ff;
+    gap: 2.5rem;
+    justify-content: center;
     padding: 2rem;
+    background: linear-gradient(
+      180deg,
+      rgb(237, 244, 253),
+      rgb(237, 244, 253) 9rem,
+      rgb(250, 151, 70) 9rem,
+      rgb(250, 151, 70) 20rem,
+      rgb(237, 244, 253) 20rem,
+      rgb(237, 244, 253) 100%
+      );
   }
   
   .service {
@@ -83,19 +107,20 @@
   .service h2 {
     font-size: 1.5rem;
     color: #4674e9;
-    margin: 1rem 0 0.5rem;
+    margin: 2rem 0 0.5rem;
   }
   
   .service p {
     font-size: 1rem;
     color: #666;
-    margin-bottom: 1rem;
+    margin: 1.5rem 0;
   }
   
   .service button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: #f9a52b;
+    padding: 0.7rem 2rem;
+    font-size: 1.2rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(250, 151, 70);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -104,38 +129,28 @@
   }
   
   .service button:hover {
-    background-color: #e08e1e;
+    background-color: rgb(255, 198, 152);
   }
   
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
-    font-size: 0.9rem;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .services {
+  @media (max-width: 800px) { 
+    
+    .service {
       flex-direction: column;
       align-items: center;
-    }
-  
-    .service {
-      width: 90%;
+      width: 70%;
+      padding: 1.7rem;
     }
   
     .intro h1 {
       font-size: 2rem;
     }
+
+    footer p{
+      width: 70%;
+    }
   }
   
   @media (max-width: 480px) {
-    .logo {
-      font-size: 1.2rem;
-    }
   
     .menu-icon {
       font-size: 1.2rem;
@@ -146,14 +161,20 @@
     }
   
     .intro p {
-      font-size: 0.9rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      padding: 0 2rem;
     }
   
     .service h2 {
-      font-size: 1.3rem;
+      font-size: 1.8rem;
+    }
+
+    .service p{
+      font-size: 0.9rem;
     }
   
     .service button {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
   }  
