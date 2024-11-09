@@ -89,6 +89,8 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
     width: 300px;
     padding: 1rem;
     text-align: center;
@@ -116,22 +118,26 @@
     margin: 1.5rem 0;
   }
   
-  .service button {
-    padding: 0.7rem 2rem;
-    font-size: 1.2rem;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  .service a {
     background-color: rgb(250, 151, 70);
-    color: #fff;
     border: none;
     border-radius: 5px;
+    color: #fff;
     cursor: pointer;
+    font-size: 1rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 1rem 0;
+    padding: 0.6rem 2rem;
+    width: 40%;
+    align-self: center;
     transition: background-color 0.3s ease;
+    text-decoration: none;
   }
   
-  .service button:hover {
+  .service a:hover {
     background-color: rgb(255, 198, 152);
   }
-  
+
   @media (max-width: 800px) { 
     
     .service {
