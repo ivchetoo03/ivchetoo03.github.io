@@ -1,0 +1,108 @@
+<div dir="ltr"><div dir="ltr"><div dir="ltr"><div dir="ltr"><div dir="ltr">
+    <table style="border-collapse:collapse;padding:0;margin:0" height="100%">
+
+        <tbody><tr>
+            <td colspan="3" style="padding:0;margin:0">
+                <div class="one" style="background-image:url(https://ivchetoo03.github.io/lab_1/pic/space_background.jpg);background-size:30%;font-family:'Press Start 2P';height:3vh;width:50vw">
+                    <table style="border-collapse:collapse;padding:0;margin:0;height:100%;width:100%" width="100%" height="100%">
+                        <tbody><tr>
+                            <td style="padding:0;margin:0;width:auto;vertical-align:top" valign="top">
+                                <p class="main_title" style="color:rgb(255,255,255);font-size:70%;margin:0">Байки далекої галактики</p>
+                            </td>
+                            <td style="padding:0;margin:0;width:auto;vertical-align:top" valign="top">
+                                <a href="https://www.youtube.com/watch?v=EsvfptdFXf4" class="button_top first" style="background-color:rgba(38,38,38,0);padding:5%;margin:1%;text-align:center;font-family:'Press Start 2P';font-size:20%;color:rgb(255,255,255);text-decoration:none;border:1px dashed rgb(255,0,0)">Головна</a>
+                            </td>
+                            <td style="padding:0;margin:0;width:auto;vertical-align:top" valign="top">
+                                <a href="https://www.youtube.com/watch?v=EsvfptdFXf4" class="button_top second" style="background-color:rgba(38,38,38,0);padding:5%;margin:1%;text-align:center;font-family:'Press Start 2P';font-size:20%;color:rgb(255,255,255);text-decoration:none;border:1px dashed rgb(255,0,0)">Планети</a>
+                            </td>
+                            <td style="padding:0;margin:0;width:auto;vertical-align:top" valign="top">
+                                <a href="https://www.youtube.com/watch?v=EsvfptdFXf4" class="button_top third" style="background-color:rgba(38,38,38,0);padding:5%;margin:1%;text-align:center;font-family:'Press Start 2P';font-size:20%;color:rgb(255,255,255);text-decoration:none;border:1px dashed rgb(255,0,0)">Карта</a>
+                            </td>
+                            <td style="padding:0;margin:0;width:auto;vertical-align:top" valign="top">
+                                <a href="https://www.youtube.com/watch?v=EsvfptdFXf4" class="button_top fourth" style="background-color:rgba(38,38,38,0);padding:5%;margin:1%;text-align:center;font-family:'Press Start 2P';font-size:20%;color:rgb(255,255,255);text-decoration:none;border:1px dashed rgb(255,0,0)">Про сайт</a>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan="3" style="padding:0;margin:0">
+                <div class="two" style="background-color:rgb(255,255,255);font-size:50%;font-family:Calibri;text-align:left;color:rgb(0,0,0);overflow:auto;height:40vh;width:10vw">
+                    <h1 style="line-height:90%">"Аколіт" мертвий: серіал за мотивами всесвіту Зоряних Воєн не планує продовження - Variety</h1>
+                    <img src="https://ivchetoo03.github.io/lab_1/pic/acolyte_news.webp" alt="Picture" width="100%">
+                    <p>Lucasfilm вирішив не продовжувати серіал від Disney+ після його першого сезону, який зображував появу ситхів приблизно за 100 років до подій «Прихованої загрози».</p>
+                    <p>Ця новина відразу стала шоком, враховуючи те, що більшість фіналу сезону 1 закінчилася безвихідно та викликала кілька сюжетних ліній для сезону 2, і не дуже сюрприз, враховуючи шалено протилежне сприйняття фанатами та менш ніж... значну кількість глядачів, яка впала після прем’єри серіалу в червні.</p>
+                </div>
+            </td>
+            <td colspan="2" style="padding:0;margin:0">
+                <div class="three" style="background-image:url(https://ivchetoo03.github.io/lab_1/pic/chill-background.jpg);background-size:30%;font-family:Calibri;color:white;height:3vh;width:40vw">
+                    <table style="border-collapse:collapse;padding:0;margin:0;height:100%;width:100%" width="100%" height="100%">
+                        <tbody><tr>
+                            <td style="padding:0;margin:0">
+                                <p class="subtitle" style="margin:0;width:30vw;height:100%;text-align:center;background-color:hsla(0,0%,0%,0.8)">ГОЛОВНА</p>
+                            </td>
+                            <td style="padding:0;margin:0;text-align:center" align="center">
+                                <img src="https://ivchetoo03.github.io/lab_1/pic/Red_ball_jett_organ.webp" usemap="#image-map" alt="Picture" class="cantina" style="height: 3vh; padding-right: 3vw;">
+                                <map name="image-map">
+                                    <area shape="rect" coords="0,0,200,400" href="https://www.youtube.com/watch?v=EsvfptdFXf4" alt="Example Link">
+                                </map>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding:0;margin:0">
+                <div class="six" style="background-color:rgb(238,238,238);text-align:left;font-family:Calibri;font-size:80%;color:rgb(0,0,0);overflow:auto;height:33vh;width:30vw">
+                    <h4 class="planet_title">| Доступні планети: |</h4>
+                    <ul class="list">
+                        <li>Альдераан</li>
+                        <li>Корусант</li>
+                        <li>Дагоба</li>
+                        <li>Набу</li>
+                        <li>Татуїн</li>
+                    </ul>
+                    <h4 class="planet_title">| Доступна карта Галактики |</h4>
+                    <h4 class="planet_title">| Сайт містить пасхалки :DD|</h4>
+                </div>
+            </td>
+            <td rowspan="2" style="padding:0;margin:0">
+                <div class="five" style="background-color:rgb(79,45,0);font-family:Calibri;font-size:50%;text-align:left;color:white;overflow:auto;height:37vh;width:10vw">
+                    <h1 class="titlee" style="line-height:90%;text-align:center">Рандомний факт</h1>
+                    <img src="https://ivchetoo03.github.io/lab_1/pic/Count_Dooku_Darth_Tyranus_WotF.webp" alt="Picture" width="100%">
+                    <p class="text">Ситхське ім'я графа Дуку - Дарт Тиранус. Хоча у фільмах  він ніколи не згадувався під цим ім'ям, його він здобув після того, як перейшов на темну сторону сили під впливом Дарта Сідіуса, та, в більшості, своїх ідеалів.</p>
+                    <p class="text">Попри те, що він колись був джедаєм та навіть мав падавана на ім`я Квай-Гон Джин, який, власне, був вперше екранізований у "Прихованій загрозі", вивчаючи глибше його історію поступово розумієш чому він так поступив. Частково це можна зрозуміти з недавно екранізованого анімаційного серіалу "Історії джедаїв", де він, ще будучи джедаєм, приймав складні психологічні рішення, що в результаті й привели його до того, до чого він йшов - темної сторони.</p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding:0;margin:0">
+                <div class="four" style="background-color:rgb(44,44,44);text-align:center;font-family:Calibri;line-height:200%;color:white;height:4vh;width:30vw">
+                    <p style="margin:0">ТУТ МОЖЕ БУТИ ВАША РЕКЛАМА</p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="padding:0;margin:0">
+                <div class="seven" style="background-image:url(https://ivchetoo03.github.io/lab_1/pic/space_background.jpg);background-size:30%;font-family:'Press Start 2P';height:7vh;width:50vw">
+                    <table style="border-collapse:collapse;padding:0;margin:0;height:100%;width:100%" width="100%" height="100%">
+                        <tbody><tr>
+                            <td style="padding:0;margin:0;vertical-align:bottom" valign="bottom">
+                                <h4 class="title_bottom" style="color:rgb(255,255,255);font-size:60%;margin:0;vertical-align:bottom;text-align:right">
+                                    May the force be with you
+                                </h4>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </td>
+        </tr>
+    </tbody></table>
+
+</div></div></div></div></div>

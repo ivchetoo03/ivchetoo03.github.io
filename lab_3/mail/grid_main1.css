@@ -1,0 +1,138 @@
+body{
+  margin: 0;
+  height: 50vh;
+  width: 50vw;
+
+}
+table{
+  border-collapse: collapse;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+tr td{
+  padding: 0;
+  margin: 0;
+}
+.main_title{
+  color: rgb(255, 255, 255);
+  font-size: 70%;
+}
+
+.title_bottom{
+  color: rgb(255, 255, 255);
+  font-size: 60%;
+  margin: 0;
+  justify-self:end;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+.titlee{
+  text-align: center;
+}
+
+.button_top {
+  background-color: rgba(38, 38, 38, 0);
+  padding: 5%;
+  margin: 1%;
+  text-align: center;
+  font-family: "Press Start 2P";
+  font-size: 20%;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border: 1px dashed  rgb(255, 0, 0);
+  text-wrap: nowrap;
+}
+
+.one {
+  background-image: url(https://ivchetoo03.github.io/lab_1/pic/space_background.jpg);
+  background-size: 30%;
+  font-family: "Press Start 2P";
+  height: 3vh;
+  width: 50vw;
+}
+.one td{
+  width: auto;
+  vertical-align: top;
+}
+.two{
+  background-color: rgb(255, 255, 255);
+  font-size: 50%;
+  font-family: Calibri;
+  text-align: left;
+  color: rgb(0, 0, 0);
+  overflow: auto;
+  height: 40vh;
+  width: 10vw;
+}
+
+.three{
+  background-image: url(https://ivchetoo03.github.io/lab_1/pic/chill-background.jpg);
+  background-size: 30%;
+  font-family: Calibri;
+  color: white;
+  height: 3vh;
+  width: 40vw;
+}
+
+.four{
+  background-color: rgb(44, 44, 44);
+  text-align: center;
+  font-family: Calibri;
+  line-height: 200%;
+  color: white;
+  height: 4vh;
+  width: 30vw;
+}
+.four p{
+  margin: 0;
+}
+
+.five{
+  background-color: rgb(79, 45, 0);
+  font-family: Calibri;
+  font-size: 50%;
+  text-align: left;
+  color: white;
+  overflow: auto;
+  height: 37vh;
+  width: 10vw;
+}
+
+.six{
+  background-color: rgb(238, 238, 238);
+  text-align: left;
+  font-family: Calibri;
+  font-size: 80%;
+  color: rgb(0, 0, 0);
+  overflow: auto;
+  height: 33vh;
+  width: 30vw;
+}
+
+.seven {
+  background-image: url(https://ivchetoo03.github.io/lab_1/pic/space_background.jpg);
+  background-size: 30%;
+  font-family: "Press Start 2P";
+  height: 7vh;
+  width: 50vw;
+}
+
+.subtitle{
+  margin: 0;
+  width: 30vw;
+  height: 100%;
+  text-align: center;
+  background-color: hsla(0, 0%, 0%, 0.8);
+}
+
+.cantina{
+  height: 3vh;
+  padding-right: 3vw;
+}
+
+h1{
+  line-height: 90%;
+}
