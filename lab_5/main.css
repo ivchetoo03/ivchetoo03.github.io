@@ -1,8 +1,11 @@
 body{
   display:grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 20vw auto 20vw;
+  grid-template-rows: auto auto auto 8vh auto;
+  min-height: 100vh;
+  max-height: auto;
   margin: 0;
+  padding: 0;
 }
 
 .main_title{
@@ -64,7 +67,6 @@ body{
   color: rgb(0, 0, 0);
   overflow: auto;
   height: 80vh;
-  width: 20vw;
 }
 
 .header_2{
@@ -79,7 +81,6 @@ body{
   font-family: Calibri;
   color: white;
   height: 5vh;
-  width: 80vw;
 }
 
 .ad{
@@ -92,7 +93,6 @@ body{
   line-height: 50px;
   color: white;
   height: 8vh;
-  width: 60vw;
 }
 .ad p{
   margin: 0;
@@ -109,7 +109,6 @@ body{
   color: white;
   overflow: auto;
   height: 75vh;
-  width: 20vw;
 }
 
 .main_content{
@@ -123,7 +122,6 @@ body{
   color: rgb(0, 0, 0);
   overflow: auto;
   height: 67vh;
-  width: 60vw;
 }
 
 .main_content.luke{
@@ -203,6 +201,30 @@ body{
 
 .list{
   line-height: 30px;
+}
+
+.main_content_js{
+  grid-column: 2;
+  grid-row: 3;
+  background-color: rgb(238, 238, 238);
+  text-align: left;
+  font-family: Calibri;
+  font-size: 30px;
+  line-height: 25px;
+  color: rgb(0, 0, 0);
+  overflow: auto;
+  height: 67vh;
+  width: 60vw;
+}
+
+.mcj_inside{
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.area_text{
+  font-size: 35px;
 }
 
 h1{
