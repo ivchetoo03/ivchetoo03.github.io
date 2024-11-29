@@ -25,7 +25,7 @@ mainContent.innerHTML += `
     <form id="numberForm">
         <label for="numberInput">Введіть натуральне число:</label>
         <input type="number" id="numberInput" min="1" required>
-        <button type="submit">Перевернути</button>
+        <button class="button_js" type="submit">Перевернути</button>
     </form>
 `;
 
@@ -43,12 +43,11 @@ if (cookies) {
 //                                    4 пункт
 mainContent.innerHTML += `
     <div class="colorChange">
-        <button id="changeColorButton">Змінити колір рамки</button>
+        <button class = "button_js" id="changeColorButton">Змінити колір рамки</button>
+        <button class = "button_js" id="cancelBorder" style="display:none" >Прибрати рамку</button>
         <input type="color" id="colorPicker" value="#000000">
     </div>
 `;
-
-mainContent.innerHTML += `<p class = "area_text">Площа пʼятикутника: ${area} </p>`
 
 function setBorderColor(color) {
     var blocks = document.querySelectorAll('.header, .news, .header_2, .ad, .fact, .main_content_js, .footer');
@@ -63,85 +62,131 @@ if (savedColor) {
     setBorderColor(savedColor);
     document.getElementById('colorPicker').value = savedColor;
 }
-console.log(localStorage);
 
 
 //                                    5 пункт
+mainContent.innerHTML+=`
+<div class="cssChange">
+    <button class="button_js" id="startSelectButton">Вибрати елемент</button>
+    <button class="button_js" id="cancelSelectButton" style="display: none;">Припинити вибір</button>
+    <h id="ifCanSelect" style="display: none;">Вибір активний!</h>
+    <h id="optionText" style="display: none;"> </h>
+    <button class="button_js" id="okOption" style="display: none;">OK</button>
+    <h id="selectedElementInfo" style="display: none;">Вибрано елемент: </h>
+    <div id="cssEditor" style="display: none;">
+        <label for="cssInstructions">Введіть CSS інструкції:</label>
+        <textarea id="cssInstructions" rows="5" cols="30"></textarea>
+        <br>
+        <button class="button_js" id="applyCssButton">Застосувати CSS</button>
+        <button class="button_js" id="clearCssButton">Видалити CSS</button>
+        <button class="button_js" id="clearAllCssButton">Видалити всі CSS</button>
+    </div>
+</div>
+`;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const mainContent = document.querySelector('.main_content_js');
-    const cssTextarea = document.getElementById('cssInstructions');
-    const applyCssButton = document.getElementById('applyCssButton');
-    const clearCssButton = document.getElementById('clearCssButton');
+    var startSelectButton = document.getElementById('startSelectButton');
+    var cancelSelectButton = document.getElementById('cancelSelectButton');
+    var selectedElementInfo = document.getElementById('selectedElementInfo');
+    var cssEditor = document.getElementById('cssEditor');
+    var cssTextarea = document.getElementById('cssInstructions');
+    var applyCssButton = document.getElementById('applyCssButton');
+    var clearCssButton = document.getElementById('clearCssButton');
+    var clearAllCssButton = document.getElementById('clearAllCssButton');
+    var ifCanSelect = document.getElementById('ifCanSelect');
+    var optionText = document.getElementById('optionText');
+    var okOption = document.getElementById('okOption');
+    let isSelecting = false;
     let selectedElement = null;
 
-    // Додаємо можливість обирати елемент для редагування
-    chooseBlock.addEventListener('click', () =>{
-        if (chooseBlock.clicked) {
-            document.querySelectorAll('*:not(#chooseBlock):not(#applyCssButton):not(#clearCssButton)').forEach((element) => {
-            element.removeEventListener('click', chooseBlockHandler);
-            });
-            chooseBlock.clicked = false;
-        } 
-        else {
-            chooseBlock.clicked = true;
+    // Почати вибір елемента
+    startSelectButton.addEventListener('click', () => {
+        cancelSelectButton.style.display = 'inline';
+        cssEditor.style.display = 'flex';
+        ifCanSelect.style.display = 'block'
+        isSelecting = true;
+    });
 
-            mainContent.innerHTML += `
-                <label for="cssInstructions">Введіть CSS інструкції:</label>
-                <textarea id="cssInstructions" rows="5" cols="30"></textarea>
-                <br>
-                <button id="chooseBlock">Вибрати блок</button>
-                <button id="applyCssButton">1 (Застосувати CSS)</button>
-                <button id="clearCssButton">2 (Видалити CSS)</button>
-            `;
-            
-            var chooseBlockHandler = (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                selectedElement = event.target;
-                mainContent.innerHTML = `Вибрано елемент: ${event.target.tagName}.${event.target.className}`;
-                cssTextarea.value = localStorage.getItem(`css-${event.target.className}`) || '';
-            };
-            document.querySelectorAll('*:not(#chooseBlock):not(#applyCssButton):not(#clearCssButton)').forEach((element) => {
-                element.addEventListener('click', chooseBlockHandler);
-            });
+    // Скасувати вибір елемента
+    cancelSelectButton.addEventListener('click', () => {
+        isSelecting = false;
+        ifCanSelect.style.display = 'none'
+    });
+
+    // Вибрати елемент при кліку
+    document.body.addEventListener('click', (event) => {
+        if (isSelecting) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            selectedElement = event.target;
+
+            // Відобразити інформацію про вибраний елемент
+            selectedElementInfo.style.display = 'block';
+            selectedElementInfo.textContent = `Вибрано елемент: ${selectedElement.tagName}.${selectedElement.className}`;
+
+            // Показати редактор CSS
+            cssEditor.style.display = 'flex';
+            startSelectButton.style.display = 'inline-block';
+
+            // Завантажити збережений CSS
+            var savedCss = localStorage.getItem(`css-${selectedElement.className}`) || '';
+            cssTextarea.value = savedCss;
         }
     });
 
-    // Застосовуємо CSS і зберігаємо у localStorage
+    // Застосувати CSS
     applyCssButton.addEventListener('click', () => {
         if (selectedElement && cssTextarea.value.trim()) {
-            const css = cssTextarea.value.trim();
+            var css = cssTextarea.value.trim();
             selectedElement.style.cssText += css;
             localStorage.setItem(`css-${selectedElement.className}`, css);
-            alert(`CSS застосовано до елемента ${selectedElement.tagName}.${selectedElement.className}`);
+            optionText.style.display = 'block';
+            okOption.style.display = 'block';
+            optionText.textContent = `CSS застосовано до елемента ${selectedElement.tagName}.${selectedElement.className}`;
         } else {
-            alert('Спершу виберіть елемент для редагування.');
+            optionText.style.display = 'block';
+            okOption.style.display = 'block';
+            optionText.textContent = `Введіть CSS інструкції перед застосуванням.`;
         }
     });
 
-    // Видаляємо CSS і очищуємо localStorage
+    okOption.addEventListener('click',()=>{
+        optionText.style.display = 'none';
+        okOption.style.display = 'none';
+    })
+
     clearCssButton.addEventListener('click', () => {
-        if (selectedElement) {
-            const className = selectedElement.className;
-            localStorage.removeItem(`css-${className}`);
-            selectedElement.style.cssText = ''; // Очищуємо стилі
-            alert(`CSS інструкції видалено для елемента ${selectedElement.tagName}.${className}`);
-        } else {
-            alert('Спершу виберіть елемент для видалення CSS.');
-        }
+        var className = selectedElement.className;
+        localStorage.removeItem(`css-${className}`);
+        selectedElement.style.cssText = '';
+        cssTextarea.value = '';
+        optionText.style.display = 'block';
+        okOption.style.display = 'block';
+        optionText.textContent = `CSS інструкції видалено для елемента ${selectedElement.tagName}.${className}`;
     });
 
-    // Завантажуємо CSS із localStorage при завантаженні сторінки
+    clearAllCssButton.addEventListener('click', () => {
+        Object.keys(localStorage).forEach((key) => {
+            if (key.startsWith('css-')) {
+                localStorage.removeItem(key);
+            }
+        });
+        optionText.style.display = 'block';
+        okOption.style.display = 'block';
+        optionText.textContent = `Всі інструкції було видалено, перезавантажте сторінку`;
+    });
+
     document.querySelectorAll('*').forEach((element) => {
-        const className = element.className;
-        const savedCss = localStorage.getItem(`css-${className}`);
+        var className = element.className;
+        var savedCss = localStorage.getItem(`css-${className}`);
         if (savedCss) {
             element.style.cssText += savedCss;
         }
     });
 });
 
+mainContent.innerHTML += `<p class = "area_text">Площа пʼятикутника: ${area} </p>`
 
 document.getElementById("numberForm").addEventListener("submit", (event) => {
     event.preventDefault();
@@ -161,4 +206,13 @@ document.getElementById('changeColorButton').addEventListener('click', () => {
         block.style.borderStyle = 'solid';
         block.style.borderWidth = '2px';
     });
+    var cancelButton = document.getElementById('cancelBorder');
+    cancelButton.style.display = 'inline';
 });
+
+document.getElementById('cancelBorder').addEventListener('click', () =>{
+    var blocks = document.querySelectorAll('.header, .news, .header_2, .ad, .fact, .main_content_js, .footer');
+    blocks.forEach(block => {
+        block.style.borderStyle = 'none';
+    });
+})

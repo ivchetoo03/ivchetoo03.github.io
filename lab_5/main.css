@@ -1,7 +1,7 @@
 body{
   display:grid;
   grid-template-columns: 20vw auto 20vw;
-  grid-template-rows: auto auto auto 8vh auto;
+  grid-template-rows: auto auto auto auto auto;
   min-height: 100vh;
   max-height: auto;
   margin: 0;
@@ -223,6 +223,39 @@ body{
   padding: 5%;
 }
 
+#cssEditor{
+  flex-direction: column;
+  justify-content: left;
+}
+
+.button_js{
+  border: 1px dashed  rgb(255, 0, 0);
+  text-align: center;
+  font-family: Calibri;
+  font-size: 25px;
+  padding: 10px 5px;
+}
+
+#numberForm{
+  padding: 40px 0;
+}
+
+.colorChange{
+  padding: 40px 0;
+}
+
+.cssChange{
+  padding: 40px 0;
+}
+
+.cssChange *{
+  padding: 10px 0;
+}
+
+.cssChange label{
+  text-align: center;
+}
+
 .area_text{
   font-size: 35px;
 }
@@ -428,6 +461,62 @@ h4{
     font-size: 4vw;
     line-height: 4vw;
   }
+
+  .main_content_js{
+    display: flex;
+    flex-direction: column;
+    font-size: 5vw;
+    line-height: 5vw;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5%;
+    order: 4;
+  }
+  
+  .mcj_inside{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+  }
+  
+  #cssEditor{
+    flex-direction: column;
+    justify-content: left;
+  }
+  
+  .button_js{
+    border: 1px dashed  rgb(255, 0, 0);
+    text-align: center;
+    font-family: Calibri;
+    font-size: 25px;
+    padding: 10px 5px;
+  }
+  
+  #numberForm{
+    padding: 40px 0;
+  }
+  
+  .colorChange{
+    padding: 40px 0;
+  }
+  
+  .cssChange{
+    padding: 40px 0;
+  }
+  
+  .cssChange *{
+    padding: 10px 0;
+  }
+  
+  .cssChange label{
+    text-align: center;
+  }
+  
+  .area_text{
+    font-size: 35px;
+  }
+  
+
   .map{
     width: 100%;
   }
