@@ -56,11 +56,7 @@ function setBorderColor(color) {
     });
 }
 
-var savedColor = localStorage.getItem('borderColor');
-if (savedColor) {
-    setBorderColor(savedColor);
-    document.getElementById('colorPicker').value = savedColor;
-}
+
 
 
 //                                    5 пункт
@@ -97,6 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
     var okOption = document.getElementById('okOption');
     let isSelecting = false;
     let selectedElement = null;
+
+    var savedColor = localStorage.getItem('borderColor');
+    console.log(localStorage);
+    console.log(savedColor);
+    if (savedColor) {
+        document.getElementById('colorPicker').value = savedColor;
+        setBorderColor(savedColor);
+    }
 
     startSelectButton.addEventListener('click', () => {
         cancelSelectButton.style.display = 'inline';
@@ -198,6 +202,7 @@ document.getElementById('changeColorButton').addEventListener('click', () => {
         block.style.borderStyle = 'solid';
         block.style.borderWidth = '2px';
     });
+    console.log(localStorage);
     var cancelButton = document.getElementById('cancelBorder');
     cancelButton.style.display = 'inline';
 });
