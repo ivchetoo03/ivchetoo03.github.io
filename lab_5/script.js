@@ -56,7 +56,6 @@ function setBorderColor(color) {
     });
 }
 
-// Завантажуємо колір з localStorage при завантаженні сторінки
 var savedColor = localStorage.getItem('borderColor');
 if (savedColor) {
     setBorderColor(savedColor);
@@ -99,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let isSelecting = false;
     let selectedElement = null;
 
-    // Почати вибір елемента
     startSelectButton.addEventListener('click', () => {
         cancelSelectButton.style.display = 'inline';
         cssEditor.style.display = 'flex';
@@ -107,13 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
         isSelecting = true;
     });
 
-    // Скасувати вибір елемента
     cancelSelectButton.addEventListener('click', () => {
         isSelecting = false;
         ifCanSelect.style.display = 'none'
     });
 
-    // Вибрати елемент при кліку
     document.body.addEventListener('click', (event) => {
         if (isSelecting) {
             event.preventDefault();
@@ -121,21 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             selectedElement = event.target;
 
-            // Відобразити інформацію про вибраний елемент
             selectedElementInfo.style.display = 'block';
             selectedElementInfo.textContent = `Вибрано елемент: ${selectedElement.tagName}.${selectedElement.className}`;
 
-            // Показати редактор CSS
             cssEditor.style.display = 'flex';
             startSelectButton.style.display = 'inline-block';
 
-            // Завантажити збережений CSS
             var savedCss = localStorage.getItem(`css-${selectedElement.className}`) || '';
             cssTextarea.value = savedCss;
         }
     });
 
-    // Застосувати CSS
     applyCssButton.addEventListener('click', () => {
         if (selectedElement && cssTextarea.value.trim()) {
             var css = cssTextarea.value.trim();
@@ -200,7 +192,7 @@ document.getElementById("numberForm").addEventListener("submit", (event) => {
 document.getElementById('changeColorButton').addEventListener('click', () => {
     var color = document.getElementById('colorPicker').value;
     setBorderColor(color);
-    localStorage.setItem('borderColor', color); // Зберігаємо колір у localStorage
+    localStorage.setItem('borderColor', color);
     var blocks = document.querySelectorAll('.header, .news, .header_2, .ad, .fact, .main_content_js, .footer');
     blocks.forEach(block => {
         block.style.borderStyle = 'solid';
