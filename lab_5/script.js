@@ -95,8 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedElement = null;
 
     var savedColor = localStorage.getItem('borderColor');
-    console.log(localStorage);
-    console.log(savedColor);
     if (savedColor) {
         document.getElementById('colorPicker').value = savedColor;
         setBorderColor(savedColor);
@@ -202,7 +200,6 @@ document.getElementById('changeColorButton').addEventListener('click', () => {
         block.style.borderStyle = 'solid';
         block.style.borderWidth = '2px';
     });
-    console.log(localStorage);
     var cancelButton = document.getElementById('cancelBorder');
     cancelButton.style.display = 'inline';
 });
