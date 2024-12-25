@@ -79,4 +79,11 @@ async function fetchMenu() {
         li.appendChild(ul);
         menu.appendChild(li);
     });
+
+    fetch('/api/menu')
+    .then(response => response.text())
+    .then(text => console.log(text))
+    .catch(error => console.error('Error:', error));
+  
+
 }

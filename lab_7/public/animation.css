@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+#work {
+    width: calc(40% + 10px);
+    height: calc(80% + 50px);
+    position: relative;
+    border: 1px solid #000;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#anim {
+    width: 100%;
+    height: 80%;
+    border: 5px solid blue;
+    position: relative; /* Зміна на relative для кращого управління позицією */
+    background-image: url('texture1.png'), url('texture2.png');
+    background-size: 32px 32px;
+    background-repeat: repeat;
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between; /* Вирівнювання кнопок */
+    padding: 10px;
+    background-color: #e0e0e0; /* Додано фон для контролів */
+    border-top: 1px solid #ccc; /* Роздільник між анімацією та контролями */
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4a90e2;
+    color: white;
+    transition: background-color 0.3s;
+    flex: 1; /* Кнопки займають однаковий простір */
+    margin: 0 5px; /* Відстань між кнопками */
+}
+
+button:hover {
+    background-color: #357ab8;
+}
+
+#eventLog {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px; /* Обмеження висоти для логів подій */
+    overflow-y: auto; /* Додано прокручування */
+}
+
+#eventLog h2 {
+    margin: 0 0 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #4a90e2;
+    color: white;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
