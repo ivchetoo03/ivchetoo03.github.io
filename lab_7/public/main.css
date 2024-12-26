@@ -232,7 +232,32 @@ h4{
   background-color: #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
-  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#log-message {
+  flex: 1;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 #anim {
@@ -243,18 +268,6 @@ h4{
   background-color: white;
   border: 5px solid blue;
   overflow: hidden;
-}
-
-.controls {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
-}
-
-.controls button {
-  padding: 10px 20px;
-  font-size: 14px;
-  cursor: pointer;
 }
 
 .divider {
@@ -268,8 +281,8 @@ h4{
 
 .circle {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }
 
@@ -281,26 +294,14 @@ h4{
   background-color: orange;
 }
 
-#event-log {
-  margin-top: 10px;
-  text-align: center;
-}
-
-#log-message {
-  margin: 10px 0;
-  font-weight: bold;
-}
-
 #event-table {
-  display: none; 
   margin-top: 20px;
-  overflow-x: auto;
+  text-align: center;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: auto;
 }
 
 th, td {

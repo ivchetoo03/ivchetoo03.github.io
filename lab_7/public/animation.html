@@ -49,16 +49,17 @@
 
       <div id="work">
         <div class="controls">
-          <button id="start-btn">Start</button>
-          <button id="reload-btn" class="hidden">Reload</button>
-          <button id="close-btn">Close</button>
-          <button id="clear-log-btn">Clear Log</button>
-        </div>
+          <div id="log-message">Лог подій з'явиться тут.</div>
+          <div class="buttons">
+            <button id="start-btn">Start</button>
+            <button id="reload-btn">Reload</button>
+            <button id="close-btn">Close</button>
+            <button id="clear-local-btn">Clear LocalStorage</button>
+            <button id="clear-server-btn">Clear Server</button>
+          </div>
+        </div>        
         <div id="anim">
           <div class="divider"></div>
-        </div>
-        <div id="event-log">
-          <div id="log-message">Лог подій з'явиться тут.</div>
         </div>
         <div id="event-table">
           <h3>Дані з LocalStorage та сервера:</h3>
@@ -75,6 +76,7 @@
           </table>
         </div>
       </div>
+
     </div>
 
     <div class="footer">
