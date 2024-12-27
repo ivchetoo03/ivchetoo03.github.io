@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: tales-from-far-far-away-balls
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    autoDeploy: true
+    region: frankfurt

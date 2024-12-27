@@ -52,28 +52,39 @@
           <div id="log-message">Лог подій з'явиться тут.</div>
           <div class="buttons">
             <button id="start-btn">Start</button>
-            <button id="reload-btn">Reload</button>
-            <button id="close-btn">Close</button>
-            <button id="clear-local-btn">Clear LocalStorage</button>
-            <button id="clear-server-btn">Clear Server</button>
+            <button id="reload-btn" style="display: none;">Reload</button>
+            <button id="close-btn" style="display: none;">Close</button>
           </div>
         </div>        
         <div id="anim">
           <div class="divider"></div>
         </div>
-        <div id="event-table">
-          <h3>Дані з LocalStorage та сервера:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Джерело</th>
-                <th>Номер події</th>
-                <th>Час</th>
-                <th>Повідомлення</th>
-              </tr>
-            </thead>
-            <tbody id="event-data"></tbody>
-          </table>
+          <div id="event-table">
+            <h3>Дані з LocalStorage:</h3>
+            <table id="local-storage-table">
+                <thead>
+                    <tr>
+                        <th>Джерело</th>
+                        <th>ID</th>
+                        <th>Час</th>
+                        <th>Повідомлення</th>
+                    </tr>
+                </thead>
+                <tbody id="local-storage-data"></tbody>
+            </table>
+        
+            <h3>Дані з сервера:</h3>
+            <table id="server-table">
+                <thead>
+                    <tr>
+                        <th>Джерело</th>
+                        <th>ID</th>
+                        <th>Час</th>
+                        <th>Повідомлення</th>
+                    </tr>
+                </thead>
+                <tbody id="server-data"></tbody>
+            </table>
         </div>
       </div>
 

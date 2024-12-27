@@ -103,7 +103,7 @@ body{
   margin: 0;
 }
 
-.fact{
+.fact {
   grid-column: 3;
   grid-row: 3 / span 2;
   background-color: rgb(18, 48, 0);
@@ -112,9 +112,13 @@ body{
   text-align: left; 
   line-height: 24px;
   color: white;
-  overflow: auto;
   height: 75vh;
   width: 20vw;
+  overflow-y: auto; 
+  overflow-x: hidden; 
+}
+.fact::-webkit-scrollbar {
+  display: none; 
 }
 
 .main_content{
@@ -237,6 +241,7 @@ h4{
 .controls {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
@@ -302,16 +307,24 @@ h4{
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#local-storage-table, #server-table {
+  width: 100%; /* Задає ширину таблиці 100% від батьківського елемента */
+  max-width: 600px; /* Максимальна ширина таблиці */
+  margin: 20px auto; /* Центрує таблицю */
+  border-collapse: collapse; /* Зливають межі таблиці */
 }
 
 th, td {
-  border: 1px solid black;
-  padding: 10px;
-  text-align: center;
+  padding: 8px; /* Внутрішні відступи для комірок */
+  text-align: center; /* Вирівнювання тексту по центру */
+  border: 1px solid #ccc; /* Межі комірок */
 }
 
 th {
-  background-color: #f4f4f4;
+  background-color: #f4f4f4; /* Колір фону для заголовків */
 }
 
 
@@ -387,6 +400,7 @@ th {
     align-items: center;
     width: 100%;
     height: auto;
+    z-index: 10;
     order: 1;
   }
   
@@ -457,7 +471,7 @@ th {
   }
   
   .fact_content{
-    background-color: rgb(79, 45, 0);
+    background-color: rgb(18, 48, 0);
     font-family: Calibri;
     font-size: 25px;
     text-align: left; 

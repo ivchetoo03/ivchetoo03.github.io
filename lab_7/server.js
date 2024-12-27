@@ -4,43 +4,44 @@ const { exec } = require('child_process');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const phpPath = '/opt/homebrew/bin/php';
+const phpScript = path.join(__dirname, 'public', 'events.php');
 
-// Middleware для обробки JSON-запитів
 app.use(express.json());
 
-// Обслуговування статичних файлів
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Обробка GET-запитів до events.php
-app.get('/events.php', (req, res) => {
-  exec('php public/events.php GET', (error, stdout, stderr) => {
-    if (error) {
-      console.error(`exec error: ${error}`);
-      res.status(500).send('Server Error');
-      return;
-    }
-    res.send(stdout);
-  });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Обробка POST-запитів до events.php
+app.get('/events.json', (req, res) => {
+  res.sendFile(path.join(__dirname, 'events.json'));
+});
+
 app.post('/events.php', (req, res) => {
   const input = JSON.stringify(req.body);
-  exec(`php public/events.php POST '${input}'`, (error, stdout, stderr) => {
+  exec(`${phpPath} ${phpScript} POST '${input}'`, (error, stdout, stderr) => {
     if (error) {
-      console.error(`exec error: ${error}`);
+      console.error(`PHP Execution Error: ${stderr || error.message}`);
       res.status(500).send('Server Error');
       return;
     }
-    res.send(stdout);
+
+    try {
+      const json = JSON.parse(stdout);
+      res.send(json);
+    } catch (parseError) {
+      console.error(`Invalid JSON Output: ${stdout}`);
+      res.status(500).send('Invalid JSON Output from PHP');
+    }
   });
 });
 
-// Обробка DELETE-запитів до events.php
 app.delete('/events.php', (req, res) => {
-  exec('php public/events.php DELETE', (error, stdout, stderr) => {
+  exec(`${phpPath} ${phpScript} DELETE`, (error, stdout, stderr) => {
     if (error) {
-      console.error(`exec error: ${error}`);
+      console.error(`PHP Execution Error: ${stderr || error.message}`);
       res.status(500).send('Server Error');
       return;
     }
@@ -48,7 +49,6 @@ app.delete('/events.php', (req, res) => {
   });
 });
 
-// Запуск сервера
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

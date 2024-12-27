@@ -2,47 +2,56 @@ const animZone = document.getElementById("anim");
 const startBtn = document.getElementById("start-btn");
 const reloadBtn = document.getElementById("reload-btn");
 const closeBtn = document.getElementById("close-btn");
-const clearBtn = document.getElementById("clear-local-btn");
 const logMessage = document.getElementById("log-message");
 const eventData = document.getElementById("event-data");
+
+
 
 let circles = [];
 let animationFrameId;
 let animationRunning = false;
+let closed = false;
 let eventCounter = 1;
+
 
 const SPEED = 3;
 const MIN_DISTANCE = 10;
 const localStorageKey = "circleEvents";
 const serverUrl = "https://tales-from-far-far-away-balls.onrender.com/events.php";
+// const serverUrl = "http://localhost:3000/events.php";
+const eventSet = new Set();
 
 const formatTime = (date) => {
   return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
 };
 
 const sendEventToServer = async (event) => {
-  await fetch(serverUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(event),
-  });
+  try {
+    await fetch(serverUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(event),
+    });
+  } catch (error) {
+    console.error('Error sending event:', error);
+  }
 };
 
 const logEvent = async (message) => {
   const time = formatTime(new Date());
-  const event = {
-    id: eventCounter++,
-    time,
-    message,
-  };
+  const eventId = `${time}-${message}`;
 
-  logMessage.textContent = `${event.id}. ${event.time}: ${event.message}`;
+  if (!eventSet.has(eventId)) {
+    eventSet.add(eventId); // Додаємо подію до набору
+    const event = { id: eventCounter++, time, message };
+    logMessage.textContent = `${event.id}. ${event.time}: ${event.message}`;
 
-  const storedEvents = JSON.parse(localStorage.getItem(localStorageKey)) || [];
-  storedEvents.push(event);
-  localStorage.setItem(localStorageKey, JSON.stringify(storedEvents));
+    const storedEvents = JSON.parse(localStorage.getItem(localStorageKey)) || [];
+    storedEvents.push(event);
+    localStorage.setItem(localStorageKey, JSON.stringify(storedEvents));
 
-  await sendEventToServer(event);
+    sendEventToServer(event);
+  }
 };
 
 const createCircle = (color, isTop) => {
@@ -63,8 +72,6 @@ const createCircle = (color, isTop) => {
 
   animZone.appendChild(circle);
   circles.push(circle);
-
-  logEvent(`Кулька ${color} створена у позиції (${x.toFixed(2)}, ${y.toFixed(2)})`);
 };
 
 const moveCircles = () => {
@@ -77,12 +84,12 @@ const moveCircles = () => {
 
         if (x <= 0 || x + 30 >= animZone.clientWidth ) {
             circle.dx *= -1;
-            logEvent(`Кулька ${circle.classList.contains("blue") ? "синя" : "помаранчева"} відскочила від стінки`);
+            logEvent(`Ball ${circle.classList.contains("blue") ? "blue" : "orange"} deflected off the wall`);
         }
 
         if (y <= 0 || y + 30 >= animZone.clientHeight) {
-            circle.dy *= -1; // Зміна напрямку по осі Y
-            logEvent(`Кулька ${circle.classList.contains("blue") ? "синя" : "помаранчева"} відскочила від стінки`);
+            circle.dy *= -1;
+            logEvent(`Ball ${circle.classList.contains("blue") ? "blue" : "orange"} deflected off the wall`);
         }
 
         circle.style.left = `${x}px`;
@@ -102,21 +109,21 @@ const handleCollision = () => {
         circle1.dy *= -1;
         circle2.dx *= -1;
         circle2.dy *= -1;
-        logEvent("Кульки зіткнулися між собою");
+        logEvent("Balls have collided");
     }
 };
 
 const checkStopCondition = () => {
     const topCircles = circles.filter(
-        (circle) => parseFloat(circle.style.top) + 10 <= animZone.clientHeight / 2
+        (circle) => parseFloat(circle.style.top) + 30 <= animZone.clientHeight / 2
     );
     const bottomCircles = circles.filter(
-        (circle) => parseFloat(circle.style.top) + 10 > animZone.clientHeight / 2
+        (circle) => parseFloat(circle.style.top) > animZone.clientHeight / 2
     );
 
     if (topCircles.length === 2 || bottomCircles.length === 2) {
         stopAnimation();
-        logEvent("Анімація зупинена: всі кульки в одній половині");
+        logEvent("Animation is over: all ball are on one side");
         startBtn.disabled = false;
     }
 };
@@ -131,13 +138,28 @@ const animate = () => {
     }
 };  
 
-const startAnimation = () => {
-  if (!animationRunning) {
-    animationRunning = true;
-    startBtn.disabled = true;
-    logEvent("Анімація запущена");
-    animate();
+const startAnimation = async () => {
+  animZone.style.display = 'block';
+  if(closed == true){
+    reloadAnimation();
+    clearServerData();
+    localStorage.clear();
+    console.log('Local Storage cleared');
+    eventCounter = 1;
+    const localStorageTable = document.getElementById("local-storage-data");
+    const serverTable = document.getElementById("server-data");
+    localStorageTable.innerHTML = '';
+    serverTable.innerHTML = '';
   }
+  else if (!animationRunning && closed == false) {
+      animationRunning = true;
+      startBtn.style.display = 'none'; 
+      reloadBtn.style.display = 'inline-block'; 
+      closeBtn.style.display = 'inline-block'; 
+      logEvent("Animation is active!");
+      animate();
+  }
+  closed = false;
 };
 
 const reloadAnimation = () => {
@@ -146,8 +168,9 @@ const reloadAnimation = () => {
   animZone.innerHTML = '<div class="divider"></div>';
   createCircle("blue", true);
   createCircle("orange", false);
-  startBtn.disabled = false;
-  logEvent("Анімація перезавантажена");
+  startBtn.style.display = 'inline-block';
+  reloadBtn.style.display = 'none';
+  closeBtn.style.display = 'none';
 };
 
 const stopAnimation = () => {
@@ -156,33 +179,45 @@ const stopAnimation = () => {
 };
 
 const closeAnimation = async () => {
+  closed = true;
   stopAnimation();
+  startBtn.style.display = 'inline-block';
+  reloadBtn.style.display = 'none';
+  closeBtn.style.display = 'none';
+  animZone.style.display = 'none';
 
-  const storedEvents = JSON.parse(localStorage.getItem(localStorageKey)) || [];
-  storedEvents.forEach((event) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `<td>LocalStorage</td><td>${event.id}</td><td>${event.time}</td><td>${event.message}</td>`;
-    eventData.appendChild(row);
+  const localStorageData = JSON.parse(localStorage.getItem(localStorageKey)) || [];
+  const localStorageTable = document.getElementById("local-storage-data");
+  localStorageData.forEach((event) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td>LocalStorage</td><td>${event.id}</td><td>${event.time}</td><td>${event.message}</td>`;
+      localStorageTable.appendChild(row);
   });
 
-  const response = await fetch(serverUrl);
+  const response = await fetch("events.json", { method: 'GET' });
   const serverEvents = await response.json();
+  const serverTable = document.getElementById("server-data");
   serverEvents.forEach((event) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `<td>Сервер</td><td>${event.id}</td><td>${event.time}</td><td>${event.message}</td>`;
-    eventData.appendChild(row);
+      const row = document.createElement("tr");
+      row.innerHTML = `<td>Server</td><td>${event.id}</td><td>${event.time}</td><td>${event.message}</td>`;
+      serverTable.appendChild(row);
   });
 };
 
-const clearStorage = () => {
-    localStorage.clear(); // Очищення Local Storage
-    logEvent("Local Storage очищено"); // Логування події
+const clearServerData = async () => {
+  console.log('Очищення серверних даних...');
+  fetch(serverUrl, {
+      method: 'DELETE',
+      headers: { "Content-Type": "application/json" }
+  });
 };
 
 startBtn.addEventListener("click", startAnimation);
 reloadBtn.addEventListener("click", reloadAnimation);
 closeBtn.addEventListener("click", closeAnimation);
-clearBtn.addEventListener("click", clearStorage);
 
 createCircle("blue", true);
 createCircle("orange", false);
+clearServerData();
+localStorage.clear();
+console.log('Local Storage cleared');
