@@ -6,6 +6,7 @@
   margin: 5px;
   width: 50%;
   height: 75%;
+  overflow-y: auto;
 }
 
 
@@ -16,6 +17,7 @@
   bottom: 0;
   font-size: 20px;
   margin: 0;
+  overflow-y: auto;
 }
 
 .block {
@@ -29,6 +31,7 @@
   text-decoration: none;
   border: 1px dashed  rgb(255, 0, 0);
   text-wrap: nowrap;  
+  overflow-y: auto;
 }
 
 .one {
@@ -43,6 +46,7 @@
   display: flex;
   justify-content: right;
   align-items: end; 
+  overflow-y: auto;
 }
 
 .middle{
@@ -55,6 +59,7 @@
   text-align: center;
   line-height: 15px;
   color: white;
+  overflow-y: auto;
 }
 
 .two{
@@ -69,7 +74,7 @@
   text-align: left;
   line-height: 25px;
   color: rgb(0, 0, 0);
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .middle2{
@@ -82,6 +87,7 @@
   background-color: rgb(144, 229, 238);
   text-align: center;
   color: white;
+  overflow-y: auto;
 }
 
 .three{
@@ -97,6 +103,7 @@
   text-align: center;
   line-height: 6vh;
   color: white;
+  overflow-y:auto;
 }
 
 .middle3{
@@ -108,6 +115,7 @@
   background-color: rgb(18, 109, 82);
   text-align: center;
   color: white;
+  overflow-y: auto;
 }
 
 .titlee{
@@ -128,7 +136,7 @@
   text-align: left; 
   line-height: 24px;
   color: white;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .middle4{
@@ -140,6 +148,7 @@
   background-color: rgb(18, 83, 109);
   text-align: center;
   color: white;
+  overflow-y: auto;
 }
 
 .four{
@@ -152,8 +161,9 @@
   text-align: center;
   font-family: Calibri;
   font-size: 30px;
-  line-height: 50px;
+  line-height: 30px;
   color: white;
+  overflow-y:auto;
 }
 
 .six{
@@ -183,6 +193,7 @@
   display:flex;
   justify-content: left;
   align-items: center;
+  overflow-y:auto;
 }
 
 .subtitle{
@@ -192,6 +203,7 @@
   margin: 0;
   width: 73%;
   background-color: hsla(0, 0%, 0%, 0.8);
+  overflow-y:auto;
 }
 
 .cantina{
