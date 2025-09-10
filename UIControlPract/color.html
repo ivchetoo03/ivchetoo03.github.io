@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UI Elements</title>
+    <link rel="stylesheet" href="color_style.css" />
+  </head>
+  <body>
+    <h1>Елементи інтерфейсу користувача</h1>
+
+    <div class="container">
+      <div class="element one">
+        <label>
+          <span class="tooltip-trigger"
+            >Radiobutton
+            <span class="tooltiptext"
+              >Radiobutton дозволяє вибрати лише один варіант із кількох.
+              Застосовується для опитувань або форм.</span
+            >
+          </span>
+        </label>
+        <label for="r1">
+          <input type="radio" name="radio" id="r1" /> Варіант A</label
+        ><br />
+        <label for="r2">
+          <input type="radio" name="radio" id="r2" /> Варіант B</label
+        >
+      </div>
+
+      <div class="element two">
+        <label>
+          <span class="tooltip-trigger"
+            >Checkbox
+            <span class="tooltiptext"
+              >Checkbox дозволяє вибрати кілька варіантів одночасно.
+              Використовується для налаштувань або фільтрації контенту.</span
+            >
+          </span>
+        </label>
+        <label for="c1"> <input type="checkbox" id="c1" /> Новини</label>
+        <label for="c2"> <input type="checkbox" id="c2" /> Сповіщення</label>
+        <label for="c3"> <input type="checkbox" id="c3" /> Пропозиції</label>
+      </div>
+
+      <div class="element one">
+        <label>
+          <span class="tooltip-trigger"
+            >Text input
+            <span class="tooltiptext"
+              >Text input дає змогу вводити текстову інформацію. Застосовується
+              для введення імені, електронної пошти, коментарів тощо.</span
+            >
+          </span>
+        </label>
+        <input type="text" placeholder="Введіть ім’я" />
+      </div>
+
+      <div class="element two">
+        <label>
+          <span class="tooltip-trigger"
+            >Tabs
+            <span class="tooltiptext"
+              >Tabs дозволяють структурувати контент на сторінці, перемикаючи
+              між різними розділами без перезавантаження.</span
+            >
+          </span>
+        </label>
+        <div class="tabs">
+          <button class="active-tab" onclick="showTab('tab1', this)">
+            Огляд
+          </button>
+          <button onclick="showTab('tab2', this)">Деталі</button>
+        </div>
+        <div id="tab1" class="tab-content active">Загальна інформація</div>
+        <div id="tab2" class="tab-content">Детальна інформація</div>
+      </div>
+
+      <div class="element one">
+        <label>
+          <span class="tooltip-trigger"
+            >Button
+            <span class="tooltiptext"
+              >Button запускає дію, наприклад, надсилання форми або відкриття
+              діалогу. Використовується для взаємодії з користувачем.</span
+            >
+          </span>
+        </label>
+        <button onclick="showText()">Натисни</button>
+        <div id="buttonText" style="display: none; margin-top: 10px">
+          Ви натиснули кнопку!
+        </div>
+      </div>
+
+      <div class="element two">
+        <label>
+          <span class="tooltip-trigger"
+            >Text label
+            <span class="tooltiptext"
+              >Text label використовується для пояснення або назви інших
+              елементів, таких як поля вводу чи кнопки.</span
+            >
+          </span>
+        </label>
+        <span>Це статичний текст.</span>
+      </div>
+
+      <div class="element one">
+        <label>
+          <span class="tooltip-trigger"
+            >Link
+            <span class="tooltiptext"
+              >Link веде користувача на іншу сторінку або ресурс.
+              Застосовується для навігації.</span
+            >
+          </span>
+        </label>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Перейти на сайт</a>
+      </div>
+
+      <div class="element two">
+        <label>
+          <span class="tooltip-trigger"
+            >Tooltip
+            <span class="tooltiptext"
+              >Tooltip з’являється при наведенні курсора і надає додаткову
+              інформацію про елемент. Використовується для пояснень без
+              перевантаження інтерфейсу.</span
+            >
+          </span>
+        </label>
+        <span style="font-style: italic;">Наведись на <span class="tooltip-trigger">мене<span class="tooltiptext">Підказка</span></span></span>
+      </div>
+
+      <div class="element one">
+        <label>
+          <span class="tooltip-trigger"
+            >Dropdown list
+            <span class="tooltiptext"
+              >Dropdown list дозволяє вибрати один варіант із кількох.
+              Застосовується для форм, фільтрів та налаштувань.</span
+            >
+          </span>
+        </label>
+        <select>
+          <option>Виберіть мову</option>
+          <option>Англійська</option>
+          <option>Українська</option>
+          <option>Німецька</option>
+        </select>
+      </div>
+
+      <div class="element two">
+        <label>
+          <span class="tooltip-trigger"
+            >Data grid
+            <span class="tooltiptext"
+              >Data grid використовується для представлення структурованих даних
+              у вигляді рядків і стовпців. Застосовується для звітів, списків і
+              каталогів.</span
+            >
+          </span>
+        </label>
+        <table>
+          <thead>
+            <tr>
+              <th>Царство</th>
+              <th>Назва</th>
+              <th>Середовище</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Птахи</td>
+              <td>Ворон</td>
+              <td>Ліс</td>
+            </tr>
+            <tr>
+              <td>Земноводні</td>
+              <td>Жаба зелена</td>
+              <td>Річки, болота</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function showTab(id, buttonElement) {
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((el) => el.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+
+        document
+          .querySelectorAll(".tabs button")
+          .forEach((btn) => btn.classList.remove("active-tab"));
+        buttonElement.classList.add("active-tab");
+      }
+    </script>
+    <script>
+      function showText() {
+        document.getElementById("buttonText").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
