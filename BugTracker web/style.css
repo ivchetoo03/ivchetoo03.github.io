@@ -1,0 +1,277 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
+}
+.topbar, .toolbar, .buttons {
+    flex: 0 0 auto;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    background: #00315c;
+    color: #fff;
+    padding: 6px 12px;
+}
+
+.topbar .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signout {
+    background: #001629;
+    border: none;
+    color: #fff;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.toolbar {
+    background: #004b8c;
+    color: #fff;
+    padding: 8px 12px;
+}
+
+.toolbar a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-container {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+.actions-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #00315c;
+    border: 1px solid #001930;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    min-width: 180px;
+    margin-top: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.actions-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: normal;
+    border-bottom: 1px solid #014682;
+    transition: background-color 0.2s;
+}
+
+.actions-menu a:hover {
+    background-color: #001e37;
+    color: #fff;
+}
+
+.actions-menu a:last-child {
+    border-bottom: none;
+}
+
+.menu-container:hover > a {
+    color: #e7e6e8;
+    border-radius: 3px;
+}
+
+.buttons {
+    padding: 10px;
+    background-color: #0170ca;
+}
+
+.buttons button {
+    background: #014682;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search-container label {
+    color: #fff;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.dropdown-select {
+    margin: 3px;
+}
+
+/* Стилі для групи радіокнопок */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-right: 20px;
+}
+
+.radio-label {
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    margin: 0;
+}
+
+/* Стилі для рядка з чекбоксами та випадаючими списками */
+.checkboxes-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.checkbox-label {
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin: 0;
+}
+
+.filter-select {
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: white;
+    font-size: 12px;
+    min-width: 120px;
+}
+
+.filter-select:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.filter-select:not(:disabled) {
+    background-color: white;
+}
+
+/* Стилі для кнопок фільтрів */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.clear-filters-btn,
+.find-report-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.clear-filters-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.find-report-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.clear-filters-btn:disabled,
+.find-report-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Основний контейнер фільтрів */
+.filters-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+}
+
+/* контейнер таблиці займає увесь залишок */
+.table-container {
+    flex: 1 1 auto;           /* росте на весь вільний простір */
+    overflow-x: auto;         /* горизонтальний скрол */
+    overflow-y: hidden;       /* вертикальний не потрібен */
+    background: #fff;
+    margin: 5px 0 0 5px;       /* відступи за потреби */
+    width: 98%;
+}
+
+.report-table {
+    table-layout: fixed;    /* обов’язково fixed */
+    border-collapse: collapse;
+}
+.report-table th,
+.report-table td {
+    /*border: 1px solid #999;*/
+    box-shadow: inset 0 0 0 1px #999;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap;
+}
+.report-table th.fixed,
+.report-table td:first-child {
+    position: sticky;
+    left: 0;                   /* прилипає до лівого краю */
+    z-index: 5;                /* вищий за інші комірки */
+    background: #ccc;          /* фон, щоб перекривати сусідів */
+    background-clip: padding-box; /* запобігає артефактам рамки */
+    box-shadow: inset 0 0 0 1px #999;
+}
+
+.drag-handle { cursor: grab; display: inline-block; }
+.drag-handle:active { cursor: grabbing; }
+
+
+.footer {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 10px 12px;
+    background: #333;
+    color: #fff;
+}

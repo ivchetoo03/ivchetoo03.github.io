@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Bug Reports</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">
+    <div class="menu">
+        <div class="menu-container">
+            <a href="#" id="actions-link">ACTIONS</a>
+            <div class="actions-menu" id="actions-menu">
+                <a href="#">Create Report</a>
+                <a href="#">Find</a>
+                <a href="editReport.html">Edit Report</a>
+                <a href="#">Export Report</a>
+                <a href="#">Sign Out</a>
+                <a href="#">Exit</a>
+            </div>
+        </div>
+        <a href="#">HELP</a>
+    </div>
+    <button class="signout">Sign Out</button>
+</div>
+
+<div class="toolbar">
+    <a href="index.html">Create Report</a>
+    <a href="edit.html">Edit Report</a>
+    <a href="find.html">Find Report</a>
+    <a href="export.html">Export Report</a>
+    <a href="account.html">Account Administration</a>
+</div>
+
+<div class="buttons">
+    <button title="Click to Create Account">Create Account</button>
+    <button onclick="window.location.href = 'deleteAcc.html'" title="Click to Remove Account">Remove Account</button>
+</div>
+
+<!-- контейнер зі скролом -->
+<div class="table-container">
+    <table class="report-table" id="bugTable">
+        <thead>
+        <tr>
+            <th class="fixed" style="width:120px;">Id</th>
+            <th><div class="drag-handle" draggable="true" style="width:200px;">Summary</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:180px;">Project</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:120px;">Issue Type</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:120px;">Priority</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:140px;">Affect Version</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:140px;">Fix Version</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:140px;">Reporter</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:140px;">Assignee</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:140px;">Severity</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:140px;">Status</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:140px;">Due Date</div></th>
+            <th><div class="drag-handle" draggable="true" style="width:140px;">Creation Date</div></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td><strong>Bug-101</strong></td>
+            <td style="text-align: left;">Кнопка "Надіслати" не реагує на клік</td>
+            <td>QA_Start_Up</td>
+            <td>Bug</td>
+            <td>High</td>
+            <td>v. 0.1</td>
+            <td>v. 0.2</td>
+            <td>TestAdmin</td>
+            <td>DevUser1</td>
+            <td>Major</td>
+            <td>In Progress</td>
+            <td>2023-10-15</td>
+            <td>2023-09-20</td>
+        </tr>
+        <tr>
+            <td><strong>Task-201</strong></td>
+            <td style="text-align: left;">Додати нове поле для вводу email</td>
+            <td>Testing_Project</td>
+            <td>Task</td>
+            <td>Medium</td>
+            <td>v. 0.2</td>
+            <td>v. 0.3</td>
+            <td>ProductOwner</td>
+            <td>FrontendDev</td>
+            <td>Medium</td>
+            <td>New</td>
+            <td>2023-11-10</td>
+            <td>2023-09-22</td>
+        </tr>
+        <tr>
+            <td><strong>Bug-102</strong></td>
+            <td style="text-align: left;">Падіння додатку при відкритті профілю</td>
+            <td>QA_Start_Up</td>
+            <td>Bug</td>
+            <td>Critical</td>
+            <td>v. 0.1</td>
+            <td>v. 0.2</td>
+            <td>TestAdmin</td>
+            <td>DevLead</td>
+            <td>Critical</td>
+            <td>Fixed</td>
+            <td>2023-10-05</td>
+            <td>2023-09-18</td>
+        </tr>
+        <tr>
+            <td><strong>Bug-103</strong></td>
+            <td style="text-align: left;">Невірне відображення дати в статистиці</td>
+            <td>Reporting_Module</td>
+            <td>Bug</td>
+            <td>Low</td>
+            <td>v. 1.5</td>
+            <td>v. 1.6</td>
+            <td>Reporter</td>
+            <td>BackendDev</td>
+            <td>Low</td>
+            <td>Retest</td>
+            <td>2023-10-25</td>
+            <td>2023-09-15</td>
+        </tr>
+        <tr>
+            <td><strong>Task-202</strong></td>
+            <td style="text-align: left;">Оновити документацію API</td>
+            <td>Doc_Project</td>
+            <td>Task</td>
+            <td>Low</td>
+            <td>v. 2.0</td>
+            <td>v. 2.1</td>
+            <td>TechWriter</td>
+            <td>TechWriter</td>
+            <td>Low</td>
+            <td>In Progress</td>
+            <td>2023-11-30</td>
+            <td>2023-09-10</td>
+        </tr>
+        <tr>
+            <td><strong>Bug-104</strong></td>
+            <td style="text-align: left;">Втрата даних при нестабільному з'єднанні</td>
+            <td>Network_Module</td>
+            <td>Bug</td>
+            <td>Critical</td>
+            <td>v. 3.0</td>
+            <td>v. 3.1</td>
+            <td>NetworkAdmin</td>
+            <td>SeniorDev</td>
+            <td>Critical</td>
+            <td>Reopen</td>
+            <td>2023-10-20</td>
+            <td>2023-09-05</td>
+        </tr>
+        <tr>
+            <td><strong>Bug-105</strong></td>
+            <td style="text-align: left;">Помилка автозаповнення форми</td>
+            <td>UI_Components</td>
+            <td>Bug</td>
+            <td>Medium</td>
+            <td>v. 1.2</td>
+            <td>v. 1.3</td>
+            <td>FrontendDev</td>
+            <td>FrontendDev</td>
+            <td>Medium</td>
+            <td>Fixed</td>
+            <td>2023-10-10</td>
+            <td>2023-09-12</td>
+        </tr>
+        <tr>
+            <td><strong>Task-203</strong></td>
+            <td style="text-align: left;">Рефакторинг модуля автентифікації</td>
+            <td>Auth_Service</td>
+            <td>Task</td>
+            <td>High</td>
+            <td>v. 4.0</td>
+            <td>v. 4.1</td>
+            <td>BackendDev</td>
+            <td>BackendDev</td>
+            <td>Major</td>
+            <td>New</td>
+            <td>2023-12-15</td>
+            <td>2023-09-25</td>
+        </tr>
+        <tr>
+            <td><strong>Bug-106</strong></td>
+            <td style="text-align: left;">Медленне завантаження зображень</td>
+            <td>Performance</td>
+            <td>Bug</td>
+            <td>High</td>
+            <td>v. 2.2</td>
+            <td>v. 2.3</td>
+            <td>PerfEngineer</td>
+            <td>DevOps</td>
+            <td>Major</td>
+            <td>In Progress</td>
+            <td>2023-11-05</td>
+            <td>2023-09-14</td>
+        </tr>
+        <tr>
+            <td><strong>Bug-107</strong></td>
+            <td style="text-align: left;">Некорректна кількість результатів пошуку</td>
+            <td>Search_Engine</td>
+            <td>Bug</td>
+            <td>Medium</td>
+            <td>v. 5.0</td>
+            <td>v. 5.1</td>
+            <td>SearchSpecialist</td>
+            <td>SearchDev</td>
+            <td>Medium</td>
+            <td>Rejected</td>
+            <td>2023-10-30</td>
+            <td>2023-09-16</td>
+        </tr>
+        <tr>
+            <td><strong>Task-204</strong></td>
+            <td style="text-align: left;">Додати підтримку нової мови</td>
+            <td>Localization</td>
+            <td>Task</td>
+            <td>Medium</td>
+            <td>v. 3.5</td>
+            <td>v. 3.6</td>
+            <td>Translator</td>
+            <td>FrontendDev</td>
+            <td>Medium</td>
+            <td>Duplicate</td>
+            <td>2023-11-20</td>
+            <td>2023-09-19</td>
+        </tr>
+        <tr>
+            <td><strong>Bug-108</strong></td>
+            <td style="text-align: left;">Не працює автозбереження в редакторі</td>
+            <td>Editor_Module</td>
+            <td>Bug</td>
+            <td>High</td>
+            <td>v. 2.5</td>
+            <td>v. 2.6</td>
+            <td>ContentManager</td>
+            <td>FullStackDev</td>
+            <td>Major</td>
+            <td>Failed Retest</td>
+            <td>2023-10-18</td>
+            <td>2023-09-21</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="footer">
+    <span>All Reports: 12</span>
+    <span>Shown Reports: 12</span>
+    <span>Current User: <strong>TestAdmin</strong></span>
+</div>
+
+<script src="drag-columns.js"></script>
+</body>
+</html>

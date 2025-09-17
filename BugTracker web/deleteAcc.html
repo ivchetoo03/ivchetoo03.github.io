@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #cccccc;
+        }
+
+        .signup-container{
+            background-color: #0059a1;
+            padding: 30px;
+            border-radius: 8px;
+            width: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+<div class="signup-container">
+    <label>
+         User Name
+    </label>
+    <select class="select" id="userSelect" title="Click to select User Name">
+        <option value=""></option>
+        <option value="TestAdmin">TestAdmin</option>
+        <option value="DevUser">DevUser</option>
+        <option value="Reporter">Reporter</option>
+        <option value="TechWriter">TechWriter</option>
+        <option value="NetworkAdmin">NetworkAdmin</option>
+        <option value="FrontendDev">FrontendDev</option>
+        <option value="BackendDev">BackendDev</option>
+        <option value="PerfEngineer">PerfEngineer</option>
+        <option value="SearchSpecialist">SearchSpecialist</option>
+        <option value="Translator">Translator</option>
+    </select>
+    <button title="Click to Remove Account" id="removeButton" onclick="removeAccount()">Remove Account</button>
+</div>
+<script>
+    function removeAccount() {
+        const userSelect = document.getElementById('userSelect');
+        const selectedUser = userSelect.value;
+
+        if (selectedUser && selectedUser !== '') {
+            window.location.href = 'index.html';
+        } else {
+            alert('Будь ласка, оберіть користувача для видалення');
+        }
+    }
+</script>
+
+</body>
+</html>
